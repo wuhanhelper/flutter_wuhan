@@ -1,0 +1,117 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+
+android {
+    signingConfigs {
+        release {
+            storeFile file("${buildscript.sourceFile.parentFile.parentFile}/wuhan.keystore")
+            storePassword "wuhan2020"
+            keyAlias = "wuhan"
+            keyPassword "wuhan2020"
+        }
+    }
+    compileSdkVersion 28
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    defaultConfig {
+        applicationId "com.epidemic.wuhan"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        resValue "string", "app_name", "我在"   // 设置默认的app_name
+
+        manifestPlaceholders = [
+                QQ_APP_ID: "1111",
+                CHANNEL_NAME: "222",
+                LOCATION_APP_KEY : "1111", /// 高德地图key
+        ]
+    }
+
+
+    buildTypes {
+
+        debug{
+            signingConfig signingConfigs.release
+        }
+
+
+        release {
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            signingConfig signingConfigs.release
+            //代码混淆
+            minifyEnabled true
+            //代码压缩
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            //移除无用的resource文件
+            shrinkResources true
+            multiDexEnabled = true
+            //在 run --release 时要注释掉
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+    }
+
+    flavorDimensions "app"
+
+    productFlavors {
+        dev {//development
+            dimension "app"
+            resValue "string", "app_name", "我在${defaultConfig.versionCode}"   // 设置默认的app_name
+//            manifestPlaceholders = [kappa_appName : "我在{defaultConfig.versionCode}"] // 设置默认的kappa_appName
+            applicationId "${defaultConfig.applicationId}.dev"
+            manifestPlaceholders = [
+                    QQ_APP_ID: "1111",
+                    CHANNEL_NAME: "111",
+                    LOCATION_APP_KEY : "1111", /// 高德地图key
+            ]
+        }
+
+
+        production{
+            dimension "app"
+//            manifestPlaceholders = [kappa_appName : "我在"] // 设置默认的kappa_appName
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
