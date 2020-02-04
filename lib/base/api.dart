@@ -1,7 +1,8 @@
 import 'package:flutter_common_utils/http/http_error.dart';
 import 'package:flutter_common_utils/sp_util.dart';
 import 'package:wuhan/base/router.dart';
-import 'package:wuhan/using_proxy.dart';
+//TODO: dio 代理，联调时取消注释
+//import 'package:wuhan/using_proxy.dart';
 import 'package:wuhan/utils/lcfarm_util.dart';
 import 'package:wuhan/utils/string_util.dart';
 
@@ -16,10 +17,9 @@ typedef FailureCallback = void Function(HttpError data);
 /// @author chenyun
 class Api {
   static const String API_PROPREFIX = 'https://m.wuhan.com';
-
+  //TODO: dio 代理，联调时取消注释
   ///默认服务器地址
-  static const String API_PREFIX = localAPI_PREFIX;
-
+//  static const String API_PREFIX = localAPI_PREFIX;
 
   ///--------------------------------------------------------------------------
 
@@ -30,8 +30,7 @@ class Api {
       path = path.trimLeft();
     }
 
-
-    if(path.startsWith(Router.scheme)){
+    if (path.startsWith(Router.scheme)) {
       return path;
     }
     if (path.startsWith("http")) {
@@ -62,11 +61,9 @@ class Api {
 
   //解析url上的参数
   static Map<String, String> parseUrlParameter(String url) {
+    Uri uri = Uri.parse(url);
 
-
-    Uri uri =  Uri.parse(url);
-
-    return  uri.queryParameters;
+    return uri.queryParameters;
 
 //    Map<String, String> map = {};
 //    List<String> urlParts = url.split("?");
@@ -85,11 +82,9 @@ class Api {
 //    return map;
   }
 
-
   //去掉url上的参数
   static String cleanParamFromUrl(String url) {
-
-    Uri uri =  Uri.parse(url);
+    Uri uri = Uri.parse(url);
 
     return '${uri.scheme}://${uri.host}${uri.path}';
 //
@@ -108,7 +103,9 @@ class Api {
 
   static String getBaseUrl() {
     return LcfarmUtil.isTest()
-        ? (SpUtil().getString("serverAddress") ?? Api.API_PREFIX)
+        //TODO: dio 代理，联调时取消注释
+//        ? (SpUtil().getString("serverAddress") ?? Api.API_PREFIX)
+        ? SpUtil().getString("serverAddress")
         : Api.API_PROPREFIX;
   }
 }
