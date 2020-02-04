@@ -7,7 +7,8 @@ import 'package:flutter_common_utils/sp_util.dart';
 import 'package:flutter_common_utils/storage_util.dart';
 import 'package:flutter_mvp/presenter/i_presenter.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wuhan/using_proxy.dart';
+//TODO: dio 代理，联调时取消注释
+//import 'package:wuhan/using_proxy.dart';
 import 'package:wuhan/utils/lcfarm_color.dart';
 import 'package:wuhan/utils/lcfarm_util.dart';
 import 'package:wuhan/widget/lcfarm_large_button.dart';
@@ -55,11 +56,12 @@ class _DeveloperState extends LcfarmWidgetState<IPresenter, Developer> {
     _serverController.text =
         SpUtil().getString("serverAddress") ?? Api.getBaseUrl();
 
-    _proxyAddressController.text =
-        SpUtil().getString("proxyAddress") ?? localProxyIPAddress;
-
-    _proxyPortController.text =
-        SpUtil().getString("proxyPort") ?? "$localProxyPort";
+    //TODO: dio 代理，联调时取消注释
+//    _proxyAddressController.text =
+//        SpUtil().getString("proxyAddress") ?? localProxyIPAddress;
+//
+//    _proxyPortController.text =
+//        SpUtil().getString("proxyPort") ?? "$localProxyPort";
 
     _h5Controller.text =
         "http://172.20.0.39:8080/#/jsbridgeTestPage"; //"http://10.1.60.25:8004/test.html";//

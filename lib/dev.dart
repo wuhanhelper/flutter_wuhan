@@ -9,7 +9,9 @@ import 'package:umeng_share/flutter_share.dart';
 import 'package:wuhan/utils/string_util.dart';
 
 import 'main_common.dart';
-import 'using_proxy.dart';
+
+//TODO: dio 代理，联调时取消注释
+//import 'using_proxy.dart';
 
 Future<Null> main() async {
   await initConfig();
@@ -45,24 +47,25 @@ Future<Null> main() async {
   //初始化 bugly
   FlutterBugly.init(androidAppId: "11", iOSAppId: "111");*/
 
+  //TODO: dio 代理，联调时取消注释
   //网络代理
-  String proxyAddress =
-      SpUtil().getString("proxyAddress") ?? "$localProxyIPAddress";
-  String proxyPort = SpUtil().getString("proxyPort") ?? "$localProxyPort";
+//  String proxyAddress =
+//      SpUtil().getString("proxyAddress") ?? "$localProxyIPAddress";
+//  String proxyPort = SpUtil().getString("proxyPort") ?? "$localProxyPort";
 
-  if (!StringUtil.isEmpty(proxyAddress) && !StringUtil.isEmpty(proxyPort)) {
-    //debug 抓包
-    (HttpManager().client.httpClientAdapter as DefaultHttpClientAdapter)
-        .onHttpClientCreate = (client) {
-      client.findProxy = (uri) {
-        return "PROXY $proxyAddress:$proxyPort";
-      };
-      client.badCertificateCallback =
-          (X509Certificate cert, String host, int port) {
-        return true;
-      };
-    };
-  }
+//  if (!StringUtil.isEmpty(proxyAddress) && !StringUtil.isEmpty(proxyPort)) {
+//    //debug 抓包
+//    (HttpManager().client.httpClientAdapter as DefaultHttpClientAdapter)
+//        .onHttpClientCreate = (client) {
+//      client.findProxy = (uri) {
+//        return "PROXY $proxyAddress:$proxyPort";
+//      };
+//      client.badCertificateCallback =
+//          (X509Certificate cert, String host, int port) {
+//        return true;
+//      };
+//    };
+//  }
   initMaterialApp();
 }
 
