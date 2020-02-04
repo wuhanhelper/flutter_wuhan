@@ -3,6 +3,10 @@ import 'package:flutter_common_utils/log_util.dart';
 import 'package:wuhan/module/home/home.dart';
 import 'package:wuhan/utils/string_util.dart';
 
+import '../developer.dart';
+import '../developerSDK.dart';
+import '../flutter_text_example.dart';
+
 /// @desc  所有路由管理,与原生路由保持一致，开头不能有/
 /// @time 2019/3/19 4:07 PM
 /// @author chenyun card
@@ -21,6 +25,9 @@ class Router {
     return {
       //这里不能传递参数
       Home.router: (context) => Home(),
+      DeveloperSDK.router: (context) => DeveloperSDK(),
+      Developer.router: (context) => Developer(),
+      FlutterTextExample.router: (context) => FlutterTextExample(),
     };
   }
 
