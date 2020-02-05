@@ -11,14 +11,4 @@ class MinePresenter extends CommonPresenter<View, Model> implements Presenter {
   Model createModel() {
     return MineModel();
   }
-
-  @override
-  void attachView(IView view) {
-    // TODO: implement attachView
-  }
-
-  @override
-  void detachView() {
-    // TODO: implement detachView
-  }
 }
