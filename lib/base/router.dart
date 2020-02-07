@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common_utils/log_util.dart';
 import 'package:wuhan/module/home/home.dart';
+import 'package:wuhan/module/login/login_page.dart';
 import 'package:wuhan/utils/string_util.dart';
 
 /// @desc  所有路由管理,与原生路由保持一致，开头不能有/
@@ -21,6 +22,7 @@ class Router {
     return {
       //这里不能传递参数
       Home.router: (context) => Home(),
+      LoginPageMain.router:(context)=>LoginPageMain(),
     };
   }
 
