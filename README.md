@@ -8,7 +8,18 @@
 如果你想加入我们团队，可以加入我们的外部群。
 能保证一定会一起开发的，到时会拉你进内部群
 
+<img src="doc/wuhan.png" width="200"/>
+
+# 设计稿
+<img src="doc/page1.png" height="100"/>
+<img src="doc/page2.png" height="100"/>
+<img src="doc/page3.png" height="100"/>
+<img src="doc/page4.png" height="100"/>
+<img src="doc/page5.png" height="100"/>
+<img src="doc/page6.png" height="100"/>
 
 # 说明
-本项目还在正在开发。。。,需要小伙伴们进来领取任务
+本项目才开始启动开发。。。需要小伙伴们进来领取任务
+
+
 
