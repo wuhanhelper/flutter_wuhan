@@ -1,16 +1,14 @@
-# wuhan
+# 武汉疫情
+这是一个公益项目，flutter端完全开源，期望我们能为这次疫情做点贡献
 
-A new Flutter application.
+# 合作方式
+现在提交都是git pull request的方式进行提交
 
-## Getting Started
+# 沟通群
+如果你想加入我们团队，可以加入我们的外部群。
+能保证一定会一起开发的，到时会拉你进内部群
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# 说明
+本项目还在正在开发。。。,需要小伙伴们进来领取任务
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
