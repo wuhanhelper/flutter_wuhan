@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_common_utils/log_util.dart';
+import 'package:wuhan/module/home/detail/detail_help/help_detail.dart';
+import 'package:wuhan/module/home/detail/detail_need/need_detail.dart';
 import 'package:wuhan/module/home/home.dart';
 import 'package:wuhan/utils/string_util.dart';
 
@@ -20,6 +22,11 @@ class Router {
   ///首页
   static const String home = Router.scheme + "home";
 
+  ///援助详情
+  static const String help_detail = HelpDetail.router;
+
+  ///需求详情
+  static const String need_detail = NeedDetail.router;
 
   static Map<String, WidgetBuilder> init() {
     return {
@@ -34,7 +41,16 @@ class Router {
   static MaterialPageRoute onGenerateRoute(RouteSettings settings) {
     LogUtil.v("settings=$settings");
     switch (settings.name) {
-
+      case Router.help_detail:
+        return Router.buildRoute(
+          settings,
+          HelpDetail(arguments: settings.arguments),
+        );
+      case Router.need_detail:
+        return Router.buildRoute(
+          settings,
+          NeedDetail(arguments: settings.arguments),
+        );
     }
     return null;
   }
@@ -61,6 +77,5 @@ class Router {
 
   static const List<String> routerList = [
     Router.login,
-
   ];
 }

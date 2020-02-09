@@ -14,6 +14,7 @@ import 'homepage_help/homepage_help.dart';
 /// @time 2020/02/04 20:50
 /// @author lizubing1992
 class Homepage extends LcfarmWidget {
+
   Homepage({Object arguments})
       : super(arguments: arguments, routerName: "Homepage");
 
@@ -81,11 +82,11 @@ class _HomepageState extends LcfarmWidgetState<Presenter, Homepage>
                 Container(
                   child: TabBar(
                       controller: _tabController,
-                      labelStyle: LcfarmStyle.style3776E9_16,
-                      labelColor: LcfarmColor.color3776E9,
-                      unselectedLabelColor: LcfarmColor.color000000,
-                      unselectedLabelStyle: LcfarmStyle.style000000_22,
-                      indicatorColor: LcfarmColor.color3776E9,
+                      labelStyle: LcfarmStyle.style000000_22,
+                      labelColor: LcfarmColor.color000000,
+                      unselectedLabelColor: LcfarmColor.color80000000,
+                      unselectedLabelStyle: LcfarmStyle.style3776E9_16,
+                      indicatorColor: LcfarmColor.color00000000,
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorWeight: LcfarmSize.dp(2),
                       tabs: _tabs),
