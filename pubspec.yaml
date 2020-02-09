@@ -142,6 +142,7 @@ flutter:
   assets:
       - images/loading/
       - images/avatar.png
+      - images/placeholder_335_143.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
