@@ -15,6 +15,7 @@ import 'package:oktoast/oktoast.dart';
 import 'package:wuhan/lcfarm_navigator_observers.dart';
 import 'package:wuhan/module/home/home.dart';
 import 'package:wuhan/module/login/login_page.dart';
+import 'package:wuhan/module/login/splash_page.dart';
 import 'package:wuhan/widget/scale_text_widget.dart';
 
 import 'base/api.dart';
@@ -118,7 +119,7 @@ void _runApp() {
       onGenerateRoute: (RouteSettings settings) {
         return Router.onGenerateRoute(settings);
       },
-      initialRoute: LoginPageMain.router,
+      initialRoute: SplashPage.router,
     ),
   ));
 }

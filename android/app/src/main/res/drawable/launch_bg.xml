@@ -6,15 +6,25 @@
 
     <item android:drawable="@color/white" />
     <item
-        android:top="0dp"
-        android:bottom="0dp"
-        android:left="0dp"
-        android:right="0dp"
-        android:drawable="@drawable/splash_bg"
+        android:bottom="300dp"
+        android:width="200dp"
+        android:height="200dp"
+        android:gravity="center_horizontal|bottom"
+        android:drawable="@drawable/center"
         />
 
 
-<!--    <item-->
+    <item
+        android:bottom="50dp"
+        android:height="50dp"
+        android:width="250dp"
+        android:gravity="center_horizontal|bottom"
+        android:drawable="@drawable/bottom"
+        />
+
+
+
+    <!--    <item-->
 <!--        android:width="200dp"-->
 <!--        android:height="200dp"-->
 <!--        android:gravity="center"-->
