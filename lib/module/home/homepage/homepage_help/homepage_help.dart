@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:wuhan/base/lcfarm_widget.dart';
+import 'package:wuhan/base/navigator_manager.dart';
+import 'package:wuhan/base/router.dart';
 import 'package:wuhan/module/home/homepage/homepage_help/homepage_help_contract.dart';
 import 'package:wuhan/module/home/homepage/homepage_help/homepage_help_presenter.dart';
 import 'package:wuhan/widget/easyrefresh/lcfarm_refresh_header.dart';
@@ -47,7 +49,7 @@ class _HomepageHelpState extends LcfarmWidgetState<Presenter, HomepageHelp>
           ? Container()
           : ListView.builder(
               itemBuilder: (c, i) {
-                return _buildLoanItem(_itemData[i]);
+                return _buildNeedItem(_itemData[i]);
               },
               itemCount: _itemData.length,
             ),
@@ -67,10 +69,13 @@ class _HomepageHelpState extends LcfarmWidgetState<Presenter, HomepageHelp>
     }
     this._itemData = list;
   }
-
-  ///授信进度item
-  Widget _buildLoanItem(HomepageListEntity bean) {
-    return HomepageListItem(bean: bean, isCredit: true);
+  
+  Widget _buildNeedItem(HomepageListEntity bean) {
+    return HomepageListItem(bean: bean, onTap: (){
+      //跳转到求助详情
+      NavigatorManager()
+          .pushNamed(context, Router.help_detail, arguments: {});
+    },);
   }
 
   @override

@@ -7,11 +7,10 @@ import 'package:wuhan/utils/lcfarm_style.dart';
 
 class HomepageListItem extends StatefulWidget {
   final HomepageListEntity bean;
-  final bool isCredit;
 
   final GestureTapCallback onTap;
 
-  HomepageListItem({@required this.bean, @required this.isCredit, this.onTap});
+  HomepageListItem({@required this.bean, this.onTap});
 
   @override
   State<StatefulWidget> createState() {
