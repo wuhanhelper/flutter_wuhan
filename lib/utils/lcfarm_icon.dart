@@ -8,5 +8,5 @@ class LcfarmIcon{
     static const IconData icon_arrow_left = const IconData(0xe636, fontFamily: __FONT_NAME__);
     static const IconData icon_clear = const IconData(0xe606, fontFamily: __FONT_NAME__);
     static const IconData icon_dialog_close = const IconData(0xe62b, fontFamily: __FONT_NAME__);
-
+    static const IconData icon_account_normal = const IconData(0xe638, fontFamily: __FONT_NAME__);
 }

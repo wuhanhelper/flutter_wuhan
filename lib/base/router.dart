@@ -5,6 +5,10 @@ import 'package:wuhan/module/login/login_page.dart';
 import 'package:wuhan/module/login/splash_page.dart';
 import 'package:wuhan/utils/string_util.dart';
 
+import '../developer.dart';
+import '../developerSDK.dart';
+import '../flutter_text_example.dart';
+
 /// @desc  所有路由管理,与原生路由保持一致，开头不能有/
 /// @time 2019/3/19 4:07 PM
 /// @author chenyun card
@@ -28,6 +32,9 @@ class Router {
       Home.router: (context) => Home(),
       SplashPage.router:(context)=>SplashPage(),
       LoginPageMain.router:(context)=>LoginPageMain(),
+      DeveloperSDK.router: (context) => DeveloperSDK(),
+      Developer.router: (context) => Developer(),
+      FlutterTextExample.router: (context) => FlutterTextExample(),
     };
   }
 
