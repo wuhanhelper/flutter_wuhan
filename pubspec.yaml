@@ -15,7 +15,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
-
+  flutter: ^1.9.1
 dependencies:
   flutter:
     sdk: flutter
@@ -31,7 +31,7 @@ dependencies:
   encrypt: ^3.3.1
 
   #提示框
-  oktoast: ^2.2.0
+  oktoast: 2.2.0
   #  fluttertoast: ^3.0.3
   #上下拉刷新
   flutter_easyrefresh: ^2.0.4
@@ -73,6 +73,10 @@ dependencies:
   lcfarm_flutter_umeng: ^0.1.8
   #    git: https://github.com/MrLiuYS/lcfarm_flutter_umeng.git
 
+  flutter_swiper:
+    git:
+      url: https://github.com/SilenceZhou/flutter_swiper.git
+      ref: kappa1.5.0
 
   #  city_pickers: ^0.1.16
   city_pickers:

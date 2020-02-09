@@ -1,16 +1,20 @@
-# wuhan
+# 新冠援助
+这是一个公益项目，flutter端完全开源，期望我们能为这次疫情做点贡献。
 
-A new Flutter application.
+# 设计稿
+<img src="doc/page1.png" height="100"/>
+<img src="doc/page2.png" height="100"/>
+<img src="doc/page3.png" height="100"/>
+<img src="doc/page4.png" height="100"/>
+<img src="doc/page5.png" height="100"/>
+<img src="doc/page6.png" height="100"/>
 
-## Getting Started
+# 合作方式
+需要先加入我们的群组，然后向群主及管理提交申请，然后分配任务。  
+<img src="doc/wuhan.png" width="200"/>
 
-This project is a starting point for a Flutter application.
+# 说明
+本项目才开始启动开发。。。需要小伙伴们进来领取任务
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
