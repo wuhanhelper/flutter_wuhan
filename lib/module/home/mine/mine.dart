@@ -6,8 +6,12 @@ import 'package:wuhan/base/lcfarm_widget.dart';
 import 'package:wuhan/base/navigator_manager.dart';
 import 'package:wuhan/module/home/mine/mine_contract.dart';
 import 'package:wuhan/module/home/mine/mine_presenter.dart';
+import 'package:wuhan/module/login/login_page.dart';
 import 'package:wuhan/utils/lcfarm_color.dart';
 import 'package:wuhan/utils/lcfarm_util.dart';
+import 'package:wuhan/utils/shared_preferences_utils.dart';
+
+import '../../../config.dart';
 
 /// @desc TODO
 /// @time 2020/02/04 20:32
@@ -100,8 +104,10 @@ class _MineState extends LcfarmWidgetState<Presenter, Mine> implements View {
     /// @author: wangbufan
     /// @function: 推出登录的最终回调
     ///
-    LcfarmUtil.makeToast('退出登录');
-    NavigatorManager().pop(context);
+   // LcfarmUtil.makeToast('退出登录');
+    SharedPreferencesUtils.save(Config.USER_LOGIN_INFO, "");
+    NavigatorManager().pushReplacementNamed(context,LoginPageMain.router);
+
   }
 
   Widget getDialog(){

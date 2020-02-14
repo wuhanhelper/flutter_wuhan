@@ -3,6 +3,8 @@ import 'package:flutter_common_utils/log_util.dart';
 import 'package:wuhan/module/home/detail/detail_help/help_detail.dart';
 import 'package:wuhan/module/home/detail/detail_need/need_detail.dart';
 import 'package:wuhan/module/home/home.dart';
+import 'package:wuhan/module/login/login_page.dart';
+import 'package:wuhan/module/login/splash_page.dart';
 import 'package:wuhan/utils/string_util.dart';
 
 import '../developer.dart';
@@ -15,6 +17,9 @@ import '../flutter_text_example.dart';
 class Router {
   ///路由协议
   static const String scheme = "router://app.wuhan.com/";
+
+  ///闪屏页
+  static const String splash = scheme + "splash";
 
   ///登录页
   static const String login = scheme + "login";
@@ -32,6 +37,8 @@ class Router {
     return {
       //这里不能传递参数
       Home.router: (context) => Home(),
+      SplashPage.router:(context)=>SplashPage(),
+      LoginPageMain.router:(context)=>LoginPageMain(),
       DeveloperSDK.router: (context) => DeveloperSDK(),
       Developer.router: (context) => Developer(),
       FlutterTextExample.router: (context) => FlutterTextExample(),
